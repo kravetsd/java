@@ -9,6 +9,8 @@ public class HelloWorld {
 		mycar.color = "blue";
 		mycar.type = "sedan";
 		mycar.cardescription();
+		String mycardescr = mycar.getDescr();
+		System.out.println(mycardescr);
 	}	
 
 }
