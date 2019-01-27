@@ -4,6 +4,6 @@ public class Dog {
 		// TODO Auto-generated constructor stub
 	}
 	public static void gav () {
-		System.out.println("GAV-GAV-GAV!");
+		System.out.println("GAV-GAV-GAV".concat(" !!! "));
 	}
 }
