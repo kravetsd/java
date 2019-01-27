@@ -5,9 +5,7 @@ public class HelloWorld {
 		Dog mydog = new Dog("Bill","12");
 		System.out.println(mydog.age);
 		Dog.gav(); //testing static method of a dog class without instance of dog object itself
-		Car mycar = new Car();
-		mycar.color = "blue";
-		mycar.type = "sedan";
+		Car mycar = new Car("KiaRio","white");
 		mycar.cardescription();
 		String mycardescr = mycar.getDescr();
 		System.out.println(mycardescr);
