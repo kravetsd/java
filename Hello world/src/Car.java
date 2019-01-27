@@ -1,6 +1,19 @@
 public class Car {
-	String color;
+	String color = "blue"; //in line initialization
 	String type;
+	
+	//start of an initialization block
+	{
+		color = "green";
+		type = "sedan";
+	}
+	 
+	//clear constructor
+	public Car () {
+		
+	} 
+		
+	// constructor with all fields are being described
 	public Car(String cartype, String carcolor) {
 		type = cartype;
 		color = carcolor;
