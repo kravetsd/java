@@ -1,10 +1,13 @@
 
 public class Dog {
-	public Dog(String name) {
+	static String name;
+	int age;
+	public Dog(String dogname, int dogage) {
 		// TODO Auto-generated constructor stub
-	}
-	
+		name = dogname;
+		age = dogage;
+	}	
 	public static void gav () {
-		System.out.println("GAV-GAV-GAV".concat(" !!! "));
+		System.out.println(name.concat(" !!! "));
 	}
 }
