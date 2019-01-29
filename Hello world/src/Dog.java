@@ -1,5 +1,3 @@
-import java.awt.SystemColor;
-
 public class Dog {
 	static int dognum;
 	static {
@@ -29,5 +27,14 @@ public class Dog {
 	}	
 	public static void gav (Dog dogobj) {
 		System.out.println("Dog name is "+ dogobj.name);
+	}
+	
+	Dog bornDog() {
+		Dog litledog = new Dog("Spike");
+		return litledog;
+	}
+	
+	void renameDog(String name) {
+		this.name = name;
 	}
 }
