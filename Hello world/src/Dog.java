@@ -9,6 +9,7 @@ public class Dog {
 	
 
 	
+	
 	static void newDogBorn() {
 		String message = "A new dog was born!";
 		System.out.println(message);
@@ -17,6 +18,10 @@ public class Dog {
 	
 	public Dog (String dogname) {
 		name = dogname;
+	}
+	
+	void RenameDog(String name) {
+		this.name = name; 
 	}
 	
 	public Dog(String dogname, String dogage) { //assign name and age to an appropriate fields on an dog instance creation
