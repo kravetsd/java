@@ -4,7 +4,12 @@ public class Hello {
         System.out.println("Hello World");
         String st = getString();
         System.out.println("A new string will be printed");
+        int myFirstNumber = 5;
+        int mySecondNumber = 13;
+        int myThirdNumber = myFirstNumber*2 + mySecondNumber;
+        int myTotal = myThirdNumber*(2+8);
         System.out.println(st);
+        System.out.println(myTotal);
 
     }
     public static String getString(){
