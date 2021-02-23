@@ -5,14 +5,12 @@ public class AreaCalculator {
         if (radius<0) {
             return -1d;
         }
-        double area = radius*radius*Math.PI;
-        return area;
+        return  radius*radius*Math.PI;
     }
     public static double area(double x, double y){
         if (x<0 || y<0) {
             return -1d;
         }
-        double area = x*y;
-        return area;
+        return x*y;
     }
 }
