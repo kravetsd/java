@@ -6,6 +6,7 @@ public class Main {
         //System.out.println(SharedDigit.hasSharedDigit(12,15));
         //System.out.println(LastDigitChecker.hasSameLastDigit(3,423,327));
         //System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(23,46));
-        FactorPrinter.printFactors(34);
+        //FactorPrinter.printFactors(34);
+        System.out.println(PerfectNumber.isPerfectNumber(6));
     }
 }
