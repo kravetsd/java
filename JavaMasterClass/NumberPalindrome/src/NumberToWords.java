@@ -2,50 +2,56 @@ public class NumberToWords {
     public static void numberToWords(int number){
         if (number<0){
             System.out.println("Invalid Value");
+        } else if (number == 0){
+            System.out.println("Zero");
         } else {
+            StringBuilder answer = new StringBuilder();
             int backup = reverse(number);
             while (backup>0) {
                 switch (backup % 10) {
                 case 0:
-                    System.out.print("Zero");
+                    answer.append("Zero");
                     break;
                 case 1:
-                    System.out.print("One");
+                    answer.append("One");
                     break;
                 case 2:
-                    System.out.print("Two");
+                    answer.append("Two");
                     break;
                 case 3:
-                    System.out.print("Three");
+                    answer.append("Three");
                     break;
                 case 4:
-                    System.out.print("Four");
+                    answer.append("Four");
                     break;
                 case 5:
-                    System.out.print("Five");
+                    answer.append("Five");
                     break;
                 case 6:
-                    System.out.print("Six");
+                    answer.append("Six");
                     break;
                 case 7:
-                    System.out.print("Seven");
+                    answer.append("Seven");
                     break;
                 case 8:
-                    System.out.print("Eight");
+                    answer.append("Eight");
                     break;
                 case 9:
-                    System.out.print("Nine");
+                    answer.append("Nine");
                     break;
                 default:
                     System.out.print("other".toUpperCase());
                 }
                 backup /= 10;
-            }
-            if (backup!=number){
-                for (int i = 1; i<=getDigitCount(number)-getDigitCount(backup) ; i++) {
-                    System.out.print("Zero");
+                if(backup!=0){
+                    answer.append(" ");
+                } else {
+                    for (int i = 0; i < (getDigitCount(number)-getDigitCount(reverse(number))); i++) {
+                        answer.append(" Zero");
+                    }
                 }
             }
+            System.out.println(answer);
         }
     }
     public static int getDigitCount(int number){

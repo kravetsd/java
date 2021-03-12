@@ -8,8 +8,8 @@ public class Main {
         //System.out.println(GreatestCommonDivisor.getGreatestCommonDivisor(23,46));
         //FactorPrinter.printFactors(34);
         //System.out.println(PerfectNumber.isPerfectNumber(6));
-        System.out.println(NumberToWords.reverse(10000));
-        System.out.println(NumberToWords.getDigitCount(1009534));
+        //System.out.println(NumberToWords.reverse(10000));
+        //System.out.println(NumberToWords.getDigitCount(1009534));
         NumberToWords.numberToWords(0);
     }
 }
