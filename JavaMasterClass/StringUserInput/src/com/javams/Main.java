@@ -10,6 +10,7 @@ public class Main {
         //int num = LargestPrime.getLargestPrime(7);
         //System.out.println(num);
         //System.out.println(LargestPrime.isPrimeNumber(5));
-        DiagonalStar.printSquareStar(58);
+        int starDiagonalNumber = readingInput.readInput();
+        DiagonalStar.printSquareStar(starDiagonalNumber);
     }
 }
