@@ -7,6 +7,10 @@ public class BasicConstructors {
         mycar.customizeCar("green");
         mycar.desctibeCar();
 
+        Car newCar = new Car(4,2,"Porshe","red");
+
+        newCar.desctibeCar();
+
     }
 }
 
@@ -16,6 +20,13 @@ class Car{
     private String model;
     private String color;
 
+    Car(int wheels,int doors, String model, String color){
+        System.out.println("Constructing your new car from scratch....");
+        this.wheels = wheels;
+        this.doors = doors;
+        this.model = model;
+        this.color = color;
+    }
     Car(){
         System.out.println("Constructing a car");
         this.wheels = 4;
@@ -34,6 +45,6 @@ class Car{
 
     public void desctibeCar(){
         System.out.println("Your new car has "+this.wheels+" wheels and "+this.doors+" doors. " +
-                "The models is "+ this.model+"! Congrats!");
+                "The model is -"+ this.model+"! Congrats!");
     }
 }
