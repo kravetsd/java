@@ -32,4 +32,9 @@ public class Box {
     public int calculateVolume(){
         return this.height*this.with*this.depth;
     }
+    void setDim(int h,int w,int d){
+        with = w;
+        height = h;
+        depth = d;
+    }
 }

@@ -3,25 +3,26 @@ package com.javacompletereference;
 public class Main {
 
     public static void main(String[] args) {
+        // initializing referencing to a BOX class
         Box mybox;
         Box mybox2;
 
+        // allocating in objects in heap
         mybox = new Box();
         mybox2 = new Box();
 
+
         // Customizing boxes using setters:
-        mybox.setDepth(4);
-        mybox.setHeight(6);
-        mybox.setWith(2);
+        mybox.setDim(6,2,4);
 
-        mybox2.setWith(1);
-        mybox2.setDepth(5);
-        mybox2.setHeight(2);
-
+        mybox2.setDim(2,1,5);
 
         // Calculating volume for both boxes:
-        System.out.println("mybox volume = "+mybox.calculateVolume()+", mybox2 volume = "+mybox2.calculateVolume());
+        int myBox1Vol = mybox.calculateVolume();
+        int myBox2Vol = mybox2.calculateVolume();
 
+        System.out.println("mybox volume = "+myBox1Vol+", mybox2 volume = "+myBox2Vol);
+        
 
 
     }
