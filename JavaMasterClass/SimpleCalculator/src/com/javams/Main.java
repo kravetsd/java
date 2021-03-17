@@ -44,5 +44,11 @@ public class Main {
         newAcc.withfrawFounds(40);
         newAcc.depositFounds(10);
 
+        //generating a new account:
+        BankAccount myacc1 = new BankAccount(123563,100,"Dasha Kravets","uddar@mail.ru","+77012139824");
+        myacc1.getBalance();
+        myacc1.getPhoneNumber();
+
+        }
+
     }
-}

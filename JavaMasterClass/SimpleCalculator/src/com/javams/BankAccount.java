@@ -10,9 +10,17 @@ public class BankAccount{
     private String email;
     private String phoneNumber;
 
-    BankAccount(){
-        System.out.println("Initializing your bank account");
+    public BankAccount(int accNumber, double balance, String customerName, String email, String phoneNumber) {
+        this.accNumber = accNumber;
+        this.balance = balance;
+        this.customerName = customerName;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
     }
+
+   public BankAccount(){
+       System.out.println("Initializing your bank account");
+   }
     public int getAccNumber() {
         System.out.println("Ypur account number is "+this.accNumber);
         return accNumber;
