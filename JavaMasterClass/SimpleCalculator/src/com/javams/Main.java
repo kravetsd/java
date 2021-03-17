@@ -35,10 +35,14 @@ public class Main {
         scanner.close();
 
         System.out.println("Person was initialized:");
-        System.out.println("Full name: "+man.getFullName()+", age: "+man.getAge());
 
 
-
+        // Opening bank account for the person:
+        BankAccount newAcc = new BankAccount();
+        newAcc.setCustomerName(man.getFullName());
+        newAcc.setBalance(100);
+        newAcc.withfrawFounds(40);
+        newAcc.depositFounds(10);
 
     }
 }
