@@ -51,4 +51,15 @@ public class Main {
 
         }
 
+        public void testPoint(){
+            Point p1 = new Point();
+            p1.setX(6);
+            p1.setY(5);
+            System.out.println(p1.distance());
+
+            Point p2 = new Point(3,1);
+
+            System.out.println(p1.distance(-1,-1));
+            System.out.println(p1.distance(p2));
+        }
     }
