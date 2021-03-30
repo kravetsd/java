@@ -31,5 +31,11 @@ public class Main {
         healthyBurger.addAddition(onion);
         healthyBurger.describeBurger();
 
+        System.out.println("-----------------------------");
+
+        DeLuxeBurger deLuxeBurger = new DeLuxeBurger(50,"Brown",true);
+        deLuxeBurger.addAddition(onion);
+        deLuxeBurger.describeBurger();
+
     }
 }
