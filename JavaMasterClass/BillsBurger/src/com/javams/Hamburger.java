@@ -50,20 +50,28 @@ public class Hamburger {
                     this.cheese = addition;
                     this.price+= addition.getPrice();
                     this.additions += 1;
+                    System.out.println(addition.getClass().getSimpleName()+" addition was added.");
+                    break;
                 case "tomato":
                     this.tomato = addition;
                     this.price+= addition.getPrice();
                     this.additions += 1;
+                    System.out.println(addition.getClass().getSimpleName()+" addition was added.");
+                    break;
                 case "lettuce":
                     this.lettuce = addition;
                     this.price+= addition.getPrice();
                     this.additions += 1;
+                    System.out.println(addition.getClass().getSimpleName()+" addition was added.");
+                    break;
                 case "carrot":
                     this.carrot = addition;
                     this.price+= addition.getPrice();
                     this.additions += 1;
+                    System.out.println(addition.getClass().getSimpleName()+" addition was added.");
+                    break;
                 default:
-                    System.out.println("Unknown addition");
+                    System.out.println("Sorry, Unknown addition can't be added. ");
             }
         } else {
             System.out.println(getClass().getSimpleName()+" can't have more then "+additionsLimit+" of addtions ");

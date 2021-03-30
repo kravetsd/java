@@ -5,7 +5,6 @@ public class Addition {
     private String name;
 
     public Addition(int price, String name) {
-        System.out.println(getClass().getSimpleName()+" addition was added.");
         this.price = price;
         this.name = name;
     }
