@@ -27,6 +27,29 @@ public class Hamburger {
         this.additions = 0;
     }
 
+    public int getAdditions() {
+        return additions;
+    }
+
+    public void incrementAddition(){
+        this.additions+=1;
+    }
+
+    public void incrementPrice(int price){
+        this.price += price;
+    }
+    public int getPrice() {
+        return price;
+    }
+
+    public int getAdditionsLimit() {
+        return additionsLimit;
+    }
+
+    public void setAdditionsLimit(int additionsLimit) {
+        this.additionsLimit = additionsLimit;
+    }
+
     public Addition getLettuce() {
         return lettuce;
     }
@@ -44,38 +67,50 @@ public class Hamburger {
     }
 
     public void addAddition(Addition addition){
-        if (this.additions < additionsLimit) {
-            switch (addition.getName().toLowerCase()){
-                case "cheese":
+        switch (addition.getName().toLowerCase()){
+            case "cheese":
+                if (this.additions < additionsLimit) {
                     this.cheese = addition;
-                    this.price+= addition.getPrice();
-                    this.additions += 1;
-                    System.out.println(addition.getClass().getSimpleName()+" addition was added.");
+                    incrementPrice(addition.getPrice());
+                    incrementAddition();
+                    System.out.println(addition.getClass().getSimpleName() + " addition was added.");
                     break;
-                case "tomato":
+                } else {
+                    System.out.println(getClass().getSimpleName()+" can't have more then "+additionsLimit+" of addtions ");
+                }
+            case "tomato":
+                if (this.additions < additionsLimit) {
                     this.tomato = addition;
-                    this.price+= addition.getPrice();
-                    this.additions += 1;
-                    System.out.println(addition.getClass().getSimpleName()+" addition was added.");
+                    incrementPrice(addition.getPrice());
+                    incrementAddition();
+                    System.out.println(addition.getClass().getSimpleName() + " addition was added.");
                     break;
-                case "lettuce":
+                } else {
+                    System.out.println(getClass().getSimpleName()+" can't have more then "+additionsLimit+" of addtions ");
+                }
+            case "lettuce":
+                if (this.additions < additionsLimit) {
                     this.lettuce = addition;
-                    this.price+= addition.getPrice();
-                    this.additions += 1;
-                    System.out.println(addition.getClass().getSimpleName()+" addition was added.");
+                    incrementPrice(addition.getPrice());
+                    incrementAddition();
+                    System.out.println(addition.getClass().getSimpleName() + " addition was added.");
                     break;
-                case "carrot":
+                } else {
+                    System.out.println(getClass().getSimpleName()+" can't have more then "+additionsLimit+" of addtions ");
+                }
+            case "carrot":
+                if (this.additions < additionsLimit) {
                     this.carrot = addition;
-                    this.price+= addition.getPrice();
-                    this.additions += 1;
-                    System.out.println(addition.getClass().getSimpleName()+" addition was added.");
+                    incrementPrice(addition.getPrice());
+                    incrementAddition();
+                    System.out.println(addition.getClass().getSimpleName() + " addition was added.");
                     break;
-                default:
-                    System.out.println("Sorry, Unknown addition can't be added. ");
+                } else {
+                    System.out.println(getClass().getSimpleName()+" can't have more then "+additionsLimit+" of addtions ");
+                }
+            default:
+                System.out.println("Sorry, Unknown addition can't be added. ");
             }
-        } else {
-            System.out.println(getClass().getSimpleName()+" can't have more then "+additionsLimit+" of addtions ");
-        }
     }
 
 /*
