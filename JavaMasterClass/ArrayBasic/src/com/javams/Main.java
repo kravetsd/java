@@ -17,6 +17,13 @@ public class Main {
         }
 
         int [] intArray = {1,2,3,4,5,6,7,8,9,0}; // only when we first time define an array!
-        System.out.println(intArray);
+
+        printArray(intArray);
+    }
+
+    public static void printArray(int[] array){
+        for (int i=0;i<array.length;i++){
+            System.out.println(array[i]);
+        }
     }
 }
