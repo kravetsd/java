@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner;
 
-    public static void main(String[] args) {
+/*    public static void main(String[] args) {
         scanner = new Scanner(System.in);
         //System.out.println("Please add a number :");
         //int [] intArray = getIntegers(5);
@@ -44,5 +44,5 @@ public class Main {
         for (int i=0;i<array.length;i++){
             System.out.println(array[i]);
         }
-    }
+    }*/
 }
