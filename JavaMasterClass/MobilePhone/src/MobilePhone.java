@@ -9,13 +9,26 @@ public class MobilePhone {
         myContacts = new ArrayList<Contact>();
     }
 
-    public boolean updateContact(Contact contactToUpdate, Contact newContact){
-        myContacts.set(contactIndex,newContact);
+    public void printContacts(){
+        for (int i = 0; i < myContacts.size() ; i++) {
+            System.out.println((i+1)+". "+myContacts.get(i).getName()+" -> "+myContacts.get(i).getNumber());
+        }
     }
 
-    public updateContact(Contact contactName,)
+    public boolean updateContact(Contact contactToUpdate, Contact newContact){
+        if (inContacts(contactToUpdate)){
+            updateContact(findContact(contactToUpdate),newContact);
+            return true;
+        }
+        return false;
+    }
 
-    public boolean addNewContact(Contact contact){
+    private void updateContact(int index, Contact newContact){
+        myContacts.set(index,newContact);
+        System.out.println("Contact "+newContact.getName()+" was updated");
+    }
+
+    public boolean inContacts(Contact contact){
         int contactIndex = findContact(contact);
         if (contactIndex>=0){
             return true;
@@ -23,7 +36,7 @@ public class MobilePhone {
         return false;
     }
 
-    private int findContact(Contact findContact){
-        return myContacts.indexOf(findContact);
+    private int findContact(Contact contact){
+        return myContacts.indexOf(contact);
     }
 }
