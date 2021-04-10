@@ -7,10 +7,11 @@ public class Main {
     public static void main(String[] args) {
 
         boolean exit = false;
+        System.out.print("CONTACTS application.\nEnter a number to choose the next action:");
         printInstructions();
 
         while (!exit){
-            System.out.print("Manage your contacts.\nEnter a number to choose the next action: ");
+            System.out.print("Your choice : ");
             int choice = scanner.nextInt();
 
             switch (choice){
@@ -20,25 +21,34 @@ public class Main {
                 case 1:
                     mobilePhone.printContacts();
                     break;
+                case 2:
+                    addContact();
+                    break;
                 case 6:
                     exit = true;
+                    System.out.println("Exiting...");
                     break;
             }
         }
-
-
-
-
     }
 
+    public static void addContact(){
+        System.out.print("Please add a contact name :");
+        scanner.nextLine();
+        String name = scanner.nextLine();
+        System.out.print("Please add a "+name+"'s number");
+        String number = scanner.nextLine();
+        Contact newContact = new Contact(name,number);
+        mobilePhone.addContact(newContact);
+    }
     public static void printInstructions(){
         System.out.println("\tPress ");
         System.out.println("\t0 - To print these instructions");
         System.out.println("\t1 - To print the list of contacts");
-        System.out.println("\t2 - To add an item to the list");
-        System.out.println("\t3 - To modify an item in the list");
-        System.out.println("\t4 - To remove an item from the list");
-        System.out.println("\t5 - To search for an item in the list");
+        System.out.println("\t2 - To add a contact");
+        System.out.println("\t3 - To modify a contact");
+        System.out.println("\t4 - To remove a contact");
+        System.out.println("\t5 - To search for a contact");
         System.out.println("\t6 - To quit the application");
     }
 }

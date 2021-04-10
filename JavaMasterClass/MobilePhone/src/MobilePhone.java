@@ -10,6 +10,10 @@ public class MobilePhone {
         myContacts = new ArrayList<Contact>();
     }
 
+    public void addContact(Contact newContact){
+        myContacts.add(newContact);
+        System.out.println("A new contact '"+newContact.getName()+"' added. Phone number: "+newContact.getNumber());
+    }
     public void printContacts(){
         System.out.println("Your contacts: ");
         System.out.println("You have "+myContacts.size()+ " contacts ");

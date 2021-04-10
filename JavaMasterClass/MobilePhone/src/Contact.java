@@ -1,8 +1,8 @@
 public class Contact {
     private String name;
-    private int number;
+    private String number;
 
-    public Contact(String name, int number) {
+    public Contact(String name, String number) {
         this.name = name;
         this.number = number;
     }
@@ -11,7 +11,7 @@ public class Contact {
         return name;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
@@ -19,7 +19,7 @@ public class Contact {
         this.name = name;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 }
