@@ -24,6 +24,9 @@ public class Main {
                 case 2:
                     addContact();
                     break;
+                case 3:
+                    modifyContact();
+                    break;
                 case 6:
                     exit = true;
                     System.out.println("Exiting...");
@@ -32,11 +35,39 @@ public class Main {
         }
     }
 
+    public static void modifyContact(){
+        System.out.print("Please enter a sequence number of the contact you want to modify: ");
+        scanner.nextLine();
+        String searchName = scanner.nextLine();
+        Contact searchContact = new Contact(searchName);
+        if (mobilePhone.inContacts(searchContact)){
+            System.out.println("Modifying "+searchName+"contact :");
+            System.out.println("Please enter a new name and phone for "+searchName+": ");
+            System.out.print("New name: ");
+            String newName = scanner.nextLine();
+            System.out.print("New phone number: ");
+            String newNumber = scanner.nextLine();
+            Contact updatedContact = new Contact(newName,newNumber);
+            mobilePhone.updateContact(searchContact,updatedContact);
+        } else {
+            System.out.println("No such contact found named "+searchName+" :");
+        }
+    }
+
+    public static boolean findContact(Contact contact){
+        boolean isOnList = mobilePhone.inContacts(contact);
+        if (isOnList){
+            return true;
+        } else {
+            System.out.println("There is no contact named "+contact.getName());
+            return false;
+        }
+    }
     public static void addContact(){
-        System.out.print("Please add a contact name :");
+        System.out.print("Please add a contact name: ");
         scanner.nextLine();
         String name = scanner.nextLine();
-        System.out.print("Please add a "+name+"'s number");
+        System.out.print("Please add a "+name+"'s number: ");
         String number = scanner.nextLine();
         Contact newContact = new Contact(name,number);
         mobilePhone.addContact(newContact);

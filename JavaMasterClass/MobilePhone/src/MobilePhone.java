@@ -23,12 +23,8 @@ public class MobilePhone {
         System.out.println("------------------------------------");
     }
 
-    public boolean updateContact(Contact contactToUpdate, Contact newContact){
-        if (inContacts(contactToUpdate)){
-            updateContact(findContact(contactToUpdate),newContact);
-            return true;
-        }
-        return false;
+    public void updateContact(Contact contactToUpdate, Contact newContact){
+            updateContact(findContact(contactToUpdate), newContact);
     }
 
     private void updateContact(int index, Contact newContact){
@@ -37,14 +33,23 @@ public class MobilePhone {
     }
 
     public boolean inContacts(Contact contact){
-        int contactIndex = findContact(contact);
-        if (contactIndex>=0){
-            return true;
+        if (contact.getNumber() == null) {
+            for (int i = 0; i < myContacts.size(); i++) {
+                if (contact.getName().equals(myContacts.get(i).getName())) {
+                    return true;
+                }
+            }
         }
-        return false;
+        int contactIndex = findContact(contact);
+        return contactIndex>=0;
     }
 
     private int findContact(Contact contact){
+        for (int i = 0; i < myContacts.size() ; i++) {
+            if (contact.getName().equals(myContacts.get(i).getName())) {
+                return i;
+            }
+        }
         return myContacts.indexOf(contact);
     }
 }
