@@ -23,6 +23,10 @@ public class MobilePhone {
         System.out.println("------------------------------------");
     }
 
+    public void removeContact(Contact removecontact){
+        myContacts.remove(findContact(removecontact));
+        System.out.println("Contct "+removecontact.getName()+" was removed.");
+    }
     public void updateContact(Contact contactToUpdate, Contact newContact){
             updateContact(findContact(contactToUpdate), newContact);
     }

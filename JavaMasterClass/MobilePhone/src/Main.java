@@ -27,6 +27,9 @@ public class Main {
                 case 3:
                     modifyContact();
                     break;
+                case 4:
+                    removeContact();
+                    break;
                 case 6:
                     exit = true;
                     System.out.println("Exiting...");
@@ -35,8 +38,20 @@ public class Main {
         }
     }
 
+    public static void removeContact(){
+        System.out.print("Please enter the name of the contact you wish to remove: ");
+        scanner.nextLine();
+        String searchName = scanner.nextLine();
+        Contact removeContact = new Contact(searchName);
+        if (mobilePhone.inContacts(removeContact)){
+            mobilePhone.removeContact(removeContact);
+        } else {
+            System.out.println("There is no contact named "+removeContact.getName());
+        }
+    }
+
     public static void modifyContact(){
-        System.out.print("Please enter a sequence number of the contact you want to modify: ");
+        System.out.print("Please enter a name of the contact you want to modify: ");
         scanner.nextLine();
         String searchName = scanner.nextLine();
         Contact searchContact = new Contact(searchName);
