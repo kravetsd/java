@@ -41,7 +41,7 @@ public class Main {
         String searchName = scanner.nextLine();
         Contact searchContact = new Contact(searchName);
         if (mobilePhone.inContacts(searchContact)){
-            System.out.println("Modifying "+searchName+"contact :");
+            System.out.println("Modifying "+searchName+"'s contact :");
             System.out.println("Please enter a new name and phone for "+searchName+": ");
             System.out.print("New name: ");
             String newName = scanner.nextLine();
