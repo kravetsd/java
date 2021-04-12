@@ -30,6 +30,9 @@ public class Main {
                 case 4:
                     removeContact();
                     break;
+                case 5:
+                    findContact();
+                    break;
                 case 6:
                     exit = true;
                     System.out.println("Exiting...");
@@ -69,14 +72,12 @@ public class Main {
         }
     }
 
-    public static boolean findContact(Contact contact){
-        boolean isOnList = mobilePhone.inContacts(contact);
-        if (isOnList){
-            return true;
-        } else {
-            System.out.println("There is no contact named "+contact.getName());
-            return false;
-        }
+    public static void findContact(){
+        System.out.print("Please enter a name of the contact you are searching: ");
+        scanner.nextLine();
+        String searchName = scanner.nextLine();
+        Contact findContact = new Contact(searchName);
+        mobilePhone.printContacts(findContact);
     }
     public static void addContact(){
         System.out.print("Please add a contact name: ");

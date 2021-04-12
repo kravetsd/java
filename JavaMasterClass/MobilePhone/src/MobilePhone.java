@@ -23,6 +23,16 @@ public class MobilePhone {
         System.out.println("------------------------------------");
     }
 
+    public void printContacts(Contact contactToPrint){
+        if (inContacts(contactToPrint)){
+            String name = myContacts.get(findContact(contactToPrint)).getName();
+            String number = myContacts.get(findContact(contactToPrint)).getNumber();
+            System.out.println(name+" -> "+number);
+        } else {
+            System.out.println("No contact named \"" + contactToPrint.getName()+"\"");
+        }
+    }
+
     public void removeContact(Contact removecontact){
         myContacts.remove(findContact(removecontact));
         System.out.println("Contct "+removecontact.getName()+" was removed.");
