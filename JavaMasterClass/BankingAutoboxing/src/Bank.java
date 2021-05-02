@@ -8,11 +8,12 @@ public class Bank {
     public Bank(String name) {
         this.name = name;
         this.branches = new ArrayList<>();
+        System.out.println("Bank "+name+" has been opened.");
     }
 
     public boolean newBranch(String branchName){
         Branch foundBranch = findBranch(branchName);
-        if (foundBranch != null) {
+        if (foundBranch == null) {
             this.branches.add(new Branch(branchName));
             return true;
         }
@@ -48,6 +49,7 @@ public class Bank {
     }
 
     public boolean listCustomers(String branchName, boolean showTransactions){
+        System.out.println("List of customers for "+branchName);
         if (findBranch(branchName) != null){
             Branch targetBranch = findBranch(branchName);
             for (int i=0; i<targetBranch.getCustomers().size();i++){

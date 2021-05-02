@@ -7,6 +7,7 @@ public class Branch {
     public Branch(String name) {
         this.name = name;
         this.customers = new ArrayList<>();
+        System.out.println("Initialized new branch...");
     }
 
     public String getName() {

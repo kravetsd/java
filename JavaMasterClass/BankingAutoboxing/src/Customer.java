@@ -8,6 +8,7 @@ public class Customer {
         this.name = name;
         this.transactions = new ArrayList<>();
         this.transactions.add(initialAmount);
+        System.out.println("Added customer "+name+" with initial amount "+initialAmount);
     }
 
     public String getName() {
