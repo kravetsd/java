@@ -5,25 +5,20 @@ public class Main {
     public static Bank bank = new Bank("HSBC");
 
     public static void main(String[] args) {
-        bank.newBranch("Karagandy");
-        bank.newBranch("Sortirovka");
-        bank.newBranch("Taincha");
+        Bank bank = new Bank("National Australia Bank");
 
-        bank.newCustomer("Karagandy","Dmitriy Kravets",100.00);
-        bank.addCustomerTransaction("Karagandy","Dmitriy Kravets",10.00);
-        bank.addCustomerTransaction("Karagandy","Dmitriy Kravets",5.00);
-        bank.newCustomer("Sortirovka","babushka",20.00);
-        bank.addCustomerTransaction("Sortirovka","babushka",115.00);
-        bank.newCustomer("Taincha","Vera",13.00);
-        bank.addCustomerTransaction("Taincha","Vera",50.00);
-        bank.listCustomers("Karagandy",true);
-        bank.listCustomers("Sortirovka",true);
-        bank.listCustomers("Taincha",false);
+        bank.newBranch("Adelaide");
 
+        bank.newCustomer("Adelaide", "Tim", 50.05);
+        bank.newCustomer("Adelaide", "Mike", 175.34);
+        bank.newCustomer("Adelaide", "Percy", 220.12);
 
-        if (!bank.newBranch("Sortirovka")){
-            System.out.println("Sortirovka branch already exist");
-        }
+        bank.addCustomerTransaction("Adelaide", "Tim", 44.22);
+        bank.addCustomerTransaction("Adelaide", "Tim", 12.44);
+        bank.addCustomerTransaction("Adelaide", "Mike", 1.65);
+
+        bank.listCustomers("Adelaide", true);
+        bank.listCustomers("Melbourne", true);
 
 
     }

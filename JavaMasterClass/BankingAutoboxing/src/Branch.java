@@ -18,7 +18,7 @@ public class Branch {
         return customers;
     }
 
-    public boolean addCustomer(String customerName, Double initialAmount){
+    public boolean addCustomer(String customerName, double initialAmount){
         if (findCustomer(customerName) == null){
             this.customers.add(new Customer(customerName,initialAmount));
             return true;
@@ -27,7 +27,7 @@ public class Branch {
         return false;
     }
 
-    public boolean addTransaction(String customerName, Double amount ){
+    public boolean addTransaction(String customerName, double amount ){
         Customer foundCustomer = findCustomer(customerName);
         if (foundCustomer != null){
             foundCustomer.addTransaction(amount);

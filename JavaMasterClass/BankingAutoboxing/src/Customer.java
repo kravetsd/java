@@ -4,7 +4,7 @@ public class Customer {
     private String name;
     private ArrayList<Double> transactions;
 
-    public Customer(String name, Double initialAmount) {
+    public Customer(String name, double initialAmount) {
         this.name = name;
         this.transactions = new ArrayList<>();
         this.transactions.add(initialAmount);
