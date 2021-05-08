@@ -13,11 +13,11 @@ public class Demo {
         addInOrder(placesToVisit,"St.Pet");
         addInOrder(placesToVisit,"Astana");
         addInOrder(placesToVisit,"Berlin");
-        printlist(placesToVisit);
+//        printlist(placesToVisit);
 
         addInOrder(placesToVisit,"Maikuduk");
         addInOrder(placesToVisit,"Berlin");
-        printlist(placesToVisit);
+//        printlist(placesToVisit);
         visit(placesToVisit);
     }
 
@@ -52,19 +52,61 @@ public class Demo {
         return true;
     }
 
-    private static void visit(LinkedList<String> sities){
+    private static void visit(LinkedList<String> cities){
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
         showMenu();
+        String direction = "forward";
+
+        ListIterator<String> listIterator = cities.listIterator();
+
+        if (cities.isEmpty()){
+            System.out.println("The list of cities to visit is empty.");
+            return;
+        } else {
+            System.out.println("Visiting "+listIterator.next());
+        }
+
         while (!quit){
             int answer = scanner.nextInt();
             switch (answer){
                 case 1:
-                    break;
+                    // go forward:
+                    if (!direction.equals("forward")){
+                        if (listIterator.hasNext()){
+                            listIterator.next();
+                        }
+                        direction = "forward";
+                    }
+                        if (!listIterator.hasNext()) {
+                            System.out.println("You are at the end of the list");
+                            break;
+                        } else {
+                            String cityToVisit = listIterator.next();
+                            System.out.println("Visiting " + cityToVisit);
+                            break;
+                        }
                 case 2:
-                    break;
+                    // go backward:
+                    if (direction.equals("forward")){
+                        if (listIterator.hasPrevious()) {
+                            listIterator.previous();
+                        }
+                        direction = "backward";
+                    }
+                    if (!listIterator.hasPrevious()){
+                        System.out.println("You are at very beginning of the list");
+                        break;
+                    } else {
+                        String cityToVisit = listIterator.previous();
+                        System.out.println("Back to " + cityToVisit);
+                        break;
+                    }
                 case 3:
                     showMenu();
+                    break;
+                case 4:
+                    printlist(cities);
                     break;
                 case 0:
                     quit = true;
@@ -78,7 +120,9 @@ public class Demo {
         System.out.println("Please press 0 to quit.\n"+
                 "Please press 1 to move to the next city.\n"+
                 "Please press 2 to move to the previous city.\n"+
-                "Please press 3 to see this menu again.");
+                "Please press 3 to see this menu again.\n"+
+                "Please press 4 to see the whole list of cities to visit.\n"+
+                "========================================================");
     }
 }
 
