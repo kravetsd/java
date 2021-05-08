@@ -80,6 +80,7 @@ public class Demo {
                     }
                         if (!listIterator.hasNext()) {
                             System.out.println("You are at the end of the list");
+                            direction = "backward";
                             break;
                         } else {
                             String cityToVisit = listIterator.next();
@@ -96,6 +97,7 @@ public class Demo {
                     }
                     if (!listIterator.hasPrevious()){
                         System.out.println("You are at very beginning of the list");
+                        direction = "forward";
                         break;
                     } else {
                         String cityToVisit = listIterator.previous();
