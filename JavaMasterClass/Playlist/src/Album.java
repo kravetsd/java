@@ -32,7 +32,7 @@ public class Album {
         return false;
     }
 
-    private Song findSong(String songName){
+    public Song findSong(String songName){
         for (int i=0; i<this.songs.size();i++){
             Song foundSong = this.songs.get(i);
             if (foundSong.getTitle().equals(songName)){
