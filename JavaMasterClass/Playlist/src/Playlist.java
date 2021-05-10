@@ -3,8 +3,8 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Playlist {
-    private ArrayList<Album> albums = new ArrayList<Album>();
-    private LinkedList<Song> playlist = new LinkedList<Song>();
+    public static ArrayList<Album> albums = new ArrayList<Album>();
+    private static LinkedList<Song> playlist = new LinkedList<Song>();
 
 
     private static void showMenu(){
@@ -15,6 +15,36 @@ public class Playlist {
                            "4. Press to REPLAY the current song.\n"+
                            "5. Press to LIST songs in the playlist.\n"+
                            "6. Press to show this MENU. ");
+    }
+
+    private static boolean addSongToPlaylist(Song song){
+        boolean inAlbum = false;
+        for (int i = 0; i < Playlist.albums.size(); i++) {
+            Album album = Playlist.albums.get(i);
+            if (album.findSong(song.getTitle())!=null){
+                inAlbum = true;
+            }
+        }
+        if (inAlbum) {
+            if (!songInPlaylist(song.getTitle())) {
+                Playlist.playlist.add(song);
+                return true;
+            } else {
+                System.out.println("Song "+song.getTitle()+" is already in your playlist");
+            }
+        } else {
+            System.out.println("Song "+song.getTitle()+" is not in your albums. Can't add this song into your playlist.");
+        }
+        return false;
+    }
+
+    private static boolean songInPlaylist(String songTitle){
+        for (int i = 0; i < Playlist.playlist.size() ; i++) {
+            if (Playlist.playlist.get(i).getTitle().equals(songTitle)){
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void main(String[] args) {
@@ -42,10 +72,29 @@ public class Playlist {
         Album album2 = new Album("album2");
         Album album3 = new Album("album3");
 
+
+        Playlist.albums.add(album1);
+        Playlist.albums.add(album2);
+        Playlist.albums.add(album3);
+
+
         //Adding songs into albums;
         album1.addSong(Hit101);
         album1.addSong(Hit102);
         album1.addSong(Hit103);
+
+        album2.addSong(Hit201);
+        album2.addSong(Hit202);
+        album2.addSong(Hit203);
+
+        album3.addSong(Hit301);
+        album3.addSong(Hit302);
+        album3.addSong(Hit303);
+
+        addSongToPlaylist(Hit101);
+        addSongToPlaylist(Hit204);
+        addSongToPlaylist(Hit303);
+        addSongToPlaylist(Hit101);
 
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;

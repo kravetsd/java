@@ -24,12 +24,13 @@ public class Album {
     public boolean addSong(Song song){
         String songTitle = song.getTitle();
         Song songToFind = findSong(songTitle);
-        if ( songToFind != null) {
-            System.out.println("Adding "+song.getTitle());
+        if ( songToFind == null) {
+//            System.out.println("Adding "+song.getTitle());
             this.songs.add(song);
-            System.out.println(song.getTitle() + " was added into " + this.name + " playlist.");
+//            System.out.println(song.getTitle() + " was added into " + this.name + " album.");
             return true;
         }
+//        System.out.println("Song "+songTitle+ " was not added to "+this.name);
         return false;
     }
 
