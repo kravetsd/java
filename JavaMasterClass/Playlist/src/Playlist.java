@@ -47,6 +47,12 @@ public class Playlist {
         return false;
     }
 
+    private static void listTracks(){
+        for (int i = 0; i < Playlist.playlist.size(); i++) {
+            System.out.println("["+(i+1)+"] - "+Playlist.playlist.get(i).getTitle()+". Duration: "+Playlist.playlist.get(i).getDuration()+".");
+        }
+    }
+
     public static void main(String[] args) {
 
         // tracks from album 1
@@ -111,6 +117,9 @@ public class Playlist {
                     break;
                 case 6:
                     showMenu();
+                    break;
+                case 5:
+                    listTracks();
                     break;
             }
         }
