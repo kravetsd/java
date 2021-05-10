@@ -37,6 +37,16 @@ public class Playlist {
         Song Hit303 = new Song("Hit303", 5.35);
         Song Hit304 = new Song("Hit304", 2.35);
 
+        // Adding new albums:
+        Album album1 = new Album("album1");
+        Album album2 = new Album("album2");
+        Album album3 = new Album("album3");
+
+        //Adding songs into albums;
+        album1.addSong(Hit101);
+        album1.addSong(Hit102);
+        album1.addSong(Hit103);
+
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
 

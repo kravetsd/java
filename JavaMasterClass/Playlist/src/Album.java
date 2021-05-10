@@ -5,7 +5,7 @@ public class Album {
     private String name;
 
     public Album(String name) {
-        this.songs = songs;
+        this.songs = new ArrayList<Song>();
         this.name = name;
     }
 
@@ -25,6 +25,7 @@ public class Album {
         String songTitle = song.getTitle();
         Song songToFind = findSong(songTitle);
         if ( songToFind != null) {
+            System.out.println("Adding "+song.getTitle());
             this.songs.add(song);
             System.out.println(song.getTitle() + " was added into " + this.name + " playlist.");
             return true;
