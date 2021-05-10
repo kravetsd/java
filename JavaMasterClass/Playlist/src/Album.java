@@ -20,4 +20,25 @@ public class Album {
     public String getName() {
         return name;
     }
+
+    public boolean addSong(Song song){
+        String songTitle = song.getTitle();
+        Song songToFind = findSong(songTitle);
+        if ( songToFind != null) {
+            this.songs.add(song);
+            System.out.println(song.getTitle() + " was added into " + this.name + " playlist.");
+            return true;
+        }
+        return false;
+    }
+
+    private Song findSong(String songName){
+        for (int i=0; i<this.songs.size();i++){
+            Song foundSong = this.songs.get(i);
+            if (foundSong.getTitle().equals(songName)){
+                return foundSong;
+            }
+        }
+        return null;
+    }
 }
