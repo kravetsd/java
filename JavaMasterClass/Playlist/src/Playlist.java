@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.Scanner;
 
 public class Playlist {
@@ -14,7 +15,8 @@ public class Playlist {
                            "3. Press to SKIP BACKWARD to a previous song.\n"+
                            "4. Press to REPLAY the current song.\n"+
                            "5. Press to LIST songs in the playlist.\n"+
-                           "6. Press to show this MENU. ");
+                           "6. Press to show this MENU. \n"+
+                           "=================================");
     }
 
     private static boolean addSongToPlaylist(Song song){
@@ -101,20 +103,45 @@ public class Playlist {
         addSongToPlaylist(Hit204);
         addSongToPlaylist(Hit303);
         addSongToPlaylist(Hit101);
+        addSongToPlaylist(Hit201);
+        addSongToPlaylist(Hit202);
+        addSongToPlaylist(Hit302);
 
         Scanner scanner = new Scanner(System.in);
         boolean quit = false;
+        boolean skipForward = true;
 
         showMenu();
+        ListIterator<Song> listIterator = Playlist.playlist.listIterator();
+
+        if (Playlist.playlist.isEmpty()){
+            System.out.println(" ~~~~~ Nothing to play. Playlist is empty. ~~~~~");
+        } else {
+            System.out.println(" ~~~~~ Now playing: "+listIterator.next().getTitle()+" ~~~~~");
+        }
 
         while (!quit){
             System.out.print( "Please enter your choice: -> ");
             int choice = scanner.nextInt();
+
+
             switch (choice){
                 case 1:
                     System.out.println("Exiting playlist...Bye!");
                     quit = true;
                     break;
+                case 2:
+                    if (!skipForward){
+                        if (listIterator.hasNext()){
+                            System.out.println(" ~~~~~ Now playing: "+listIterator.next().getTitle()+" ~~~~~");
+                        } else {
+                            System.out.println("You are at the end of the playlist.");
+                        }
+                        skipForward = true;
+                        break;
+                    } else {
+
+                    }
                 case 6:
                     showMenu();
                     break;
@@ -124,4 +151,5 @@ public class Playlist {
             }
         }
     }
+
 }
