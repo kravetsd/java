@@ -132,12 +132,13 @@ public class Playlist {
                     break;
                 case 2:
                     if (!skipForward){
-                        listIterator.next();
                         if (listIterator.hasNext()){
+                            listIterator.next();
                             System.out.println(" ~~~~~ Now playing: "+listIterator.next().getTitle()+" ~~~~~");
                         } else {
                             System.out.println("You are at the end of the playlist.");
                             skipForward = false;
+                            break;
                         }
                         skipForward = true;
                         break;
@@ -160,16 +161,26 @@ public class Playlist {
                         }
                         break;
                     } else {
-                        listIterator.previous();
                         if (listIterator.hasPrevious()){
+                            listIterator.previous();
                             System.out.println(" ~~~~~ Now playing: "+listIterator.previous().getTitle()+" ~~~~~");
                         } else {
                             System.out.println("You are at the very beginning of the playlist.");
                             skipForward = true;
+                            break;
                         }
                         skipForward = false;
                         break;
                     }
+                case 4:
+                    if (skipForward){
+                        System.out.println(" ~~~~~ Now playing: "+listIterator.previous().getTitle()+" ~~~~~");
+                        skipForward = false;
+                    } else {
+                        System.out.println(" ~~~~~ Now playing: "+listIterator.next().getTitle()+" ~~~~~");
+                        skipForward = true;
+                    }
+                    break;
                 case 6:
                     showMenu();
                     break;
