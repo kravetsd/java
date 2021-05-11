@@ -132,15 +132,43 @@ public class Playlist {
                     break;
                 case 2:
                     if (!skipForward){
+                        listIterator.next();
                         if (listIterator.hasNext()){
                             System.out.println(" ~~~~~ Now playing: "+listIterator.next().getTitle()+" ~~~~~");
                         } else {
                             System.out.println("You are at the end of the playlist.");
+                            skipForward = false;
                         }
                         skipForward = true;
                         break;
                     } else {
-
+                        if (listIterator.hasNext()){
+                            System.out.println(" ~~~~~ Now playing: "+listIterator.next().getTitle()+" ~~~~~");
+                        } else {
+                            System.out.println("You are at the end of the playlist.");
+                            skipForward = false;
+                        }
+                        break;
+                    }
+                case 3:
+                    if (!skipForward){
+                        if (listIterator.hasPrevious()){
+                            System.out.println(" ~~~~~ Now playing: "+listIterator.previous().getTitle()+" ~~~~~");
+                        } else {
+                            System.out.println("You are at the very beginning of the playlist.");
+                            skipForward = true;
+                        }
+                        break;
+                    } else {
+                        listIterator.previous();
+                        if (listIterator.hasPrevious()){
+                            System.out.println(" ~~~~~ Now playing: "+listIterator.previous().getTitle()+" ~~~~~");
+                        } else {
+                            System.out.println("You are at the very beginning of the playlist.");
+                            skipForward = true;
+                        }
+                        skipForward = false;
+                        break;
                     }
                 case 6:
                     showMenu();
