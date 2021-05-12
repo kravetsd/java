@@ -16,6 +16,7 @@ public class Playlist {
                            "4. Press to REPLAY the current song.\n"+
                            "5. Press to LIST songs in the playlist.\n"+
                            "6. Press to show this MENU. \n"+
+                           "7. Press to REMOVE the current song from the playlist.\n"+
                            "=================================");
     }
 
@@ -181,11 +182,19 @@ public class Playlist {
                         skipForward = true;
                     }
                     break;
+                case 5:
+                    listTracks();
+                    break;
                 case 6:
                     showMenu();
                     break;
-                case 5:
-                    listTracks();
+                case 7:
+                    if (listIterator.hasPrevious()){
+                        System.out.println(" ~~~~~ Now playing: "+listIterator.previous().getTitle()+" ~~~~~");
+                        System.out.println(" Removing track "+listIterator.next().getTitle()+" from playlist");
+
+                    }
+                    listIterator.remove();
                     break;
             }
         }
