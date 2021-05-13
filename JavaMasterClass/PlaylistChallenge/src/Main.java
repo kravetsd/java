@@ -79,7 +79,7 @@ public class Main {
         }
     }
 
-    public void printlist(LinkedList<Song> playlist){
+    public static void printlist(LinkedList<Song> playlist){
         ListIterator<Song> listIterator = playlist.listIterator();
         System.out.println("===============================");
         while (listIterator.hasNext()){
