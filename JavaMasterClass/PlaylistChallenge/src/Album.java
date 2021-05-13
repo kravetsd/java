@@ -6,13 +6,13 @@ public class Album {
     private String artist;
     private ArrayList<Song> songs;
 
-    public Album(String name, String artist) {
+    public Album(String artist,String name) {
         this.name = name;
         this.artist = artist;
         this.songs = new ArrayList<Song>();
     }
 
-    public boolean addSong(String title, double duration){
+    public boolean addSong(String title,double duration){
         if (findSong(title)==null){
             this.songs.add(new Song(title,duration));
             return true;
@@ -29,7 +29,7 @@ public class Album {
         return null;
     }
 
-    public boolean addToPlaylist(int trackNumber, LinkedList<Song> playlist){
+    public boolean addToPlayList(int trackNumber,LinkedList<Song> playlist){
         int index = trackNumber - 1;
         if ((index>=0)&&(index<=this.songs.size())){
             playlist.add(this.songs.get(index));
@@ -39,18 +39,7 @@ public class Album {
         return false;
     }
 
-/*    public boolean addToPlaylist(String title, LinkedList<Song> playlist){
-        for (Song searchsong: this.songs){
-            if (searchsong.getTitle().equals(title)){
-                int index = this.songs.indexOf(searchsong);
-                playlist.add(searchsong);
-                return true;
-            }
-        }
-        System.out.println("This album does not have a track "+"\"title\"");
-        return false;
-    }*/
-    public boolean addToPlaylist(String title, LinkedList<Song> playlist){
+    public boolean addToPlayList(String title,LinkedList<Song> playlist){
         Song checkedSong = findSong(title);
         if (checkedSong!=null){
             playlist.add(checkedSong);

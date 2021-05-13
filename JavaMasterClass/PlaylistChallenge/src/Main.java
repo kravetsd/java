@@ -26,8 +26,8 @@ public class Main {
         albums.add(album);
 
         LinkedList<Song> playlist = new LinkedList<Song>();
-        albums.get(1).addToPlaylist(1,playlist);
-        albums.get(0).addToPlaylist(2,playlist);
+        albums.get(1).addToPlayList(1,playlist);
+        albums.get(0).addToPlayList(2,playlist);
 
 
         play(playlist);
@@ -77,5 +77,14 @@ public class Main {
                     printlist(playlist);
             }
         }
+    }
+
+    public void printlist(LinkedList<Song> playlist){
+        ListIterator<Song> listIterator = playlist.listIterator();
+        System.out.println("===============================");
+        while (listIterator.hasNext()){
+            System.out.println(listIterator.next().toString());
+        }
+        System.out.println("===============================");
     }
 }
