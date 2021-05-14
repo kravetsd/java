@@ -50,9 +50,15 @@ public class Playlist {
         return false;
     }
 
-    private static void listTracks(){
+    private static void listTracks(String currentTrackTitle){
         for (int i = 0; i < Playlist.playlist.size(); i++) {
-            System.out.println("["+(i+1)+"] - "+Playlist.playlist.get(i).getTitle()+". Duration: "+Playlist.playlist.get(i).getDuration()+".");
+            String message = "["+(i+1)+"] - "+Playlist.playlist.get(i).getTitle()+". Duration: "
+                    +Playlist.playlist.get(i).getDuration()+".";
+            if (currentTrackTitle.equals(Playlist.playlist.get(i).getTitle())){
+                System.out.println(message);
+            } else{
+                System.out.println(message);
+            }
         }
     }
 
@@ -183,18 +189,26 @@ public class Playlist {
                     }
                     break;
                 case 5:
-                    listTracks();
+                    listIterator.next();
+                    String currentTitile = listIterator.previous().getTitle();
+                    listTracks(currentTitile);
                     break;
                 case 6:
                     showMenu();
                     break;
                 case 7:
-                    if (listIterator.hasPrevious()){
-                        System.out.println(" ~~~~~ Now playing: "+listIterator.previous().getTitle()+" ~~~~~");
-                        System.out.println(" Removing track "+listIterator.next().getTitle()+" from playlist");
-
+                    if (playlist.size() >0) {
+                        if (listIterator.hasPrevious()) {
+                            System.out.println(" ~~~~~ Now playing: " + listIterator.previous().getTitle() + " ~~~~~");
+                            System.out.println(" Removing track " + listIterator.next().getTitle() + " from playlist");
+                        } else if (listIterator.hasNext()){
+                            System.out.println(" ~~~~~ Now playing: " + listIterator.next().getTitle() + " ~~~~~");
+                            System.out.println(" Removing track " + listIterator.previous().getTitle() + " from playlist");
+                        }
+                        listIterator.remove();
+                    } else {
+                        System.out.println("Playlist is empty");
                     }
-                    listIterator.remove();
                     break;
             }
         }
