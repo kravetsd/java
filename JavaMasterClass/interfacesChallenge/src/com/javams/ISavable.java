@@ -1,9 +1,10 @@
 package com.javams;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface ISavable {
-    ArrayList<String> storage = new ArrayList<String>();
-
+    List<String> write ();
+    void read(List<String> savedValues);
 
 }
