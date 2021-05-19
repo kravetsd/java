@@ -7,20 +7,36 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 	// write your code here
-        Player player = new Player("Dima",10,15);
-        System.out.println(player.toString());
+        Monster monster = new Monster("BioWoolf",30);
+        System.out.println(monster.toString());
 
-        player.setStrength(30);
-        System.out.println(player.toString());
+        monster.setHitPoints(45);
+        monster.setDamage(15);
+        System.out.println(monster.toString());
 
-        saveObject(player);
+        saveObject(monster);
 
-        player.setStrength(35);
-        System.out.println(player.toString());
+        monster.setDamage(30);
+        System.out.println(monster.toString());
+
+        loadObject(monster);
+        System.out.println(monster.toString());
 
 
-        loadObject(player);
-        System.out.println(player.toString());
+//        Player player = new Player("Dima",10,15);
+//        System.out.println(player.toString());
+//
+//        player.setStrength(30);
+//        System.out.println(player.toString());
+//
+//        saveObject(player);
+//
+//        player.setStrength(35);
+//        System.out.println(player.toString());
+//
+//
+//        loadObject(player);
+//        System.out.println(player.toString());
 
 
     }
