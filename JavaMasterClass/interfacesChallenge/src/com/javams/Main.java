@@ -22,6 +22,22 @@ public class Main {
         loadObject(monster);
         System.out.println(monster.toString());
 
+        ISavable nemMonster = new Monster("BioWoolf",30);
+        System.out.println(nemMonster.toString());
+
+        ((Monster) nemMonster).setHitPoints(45);
+        ((Monster)nemMonster).setDamage(15);
+        System.out.println(nemMonster.toString());
+
+        saveObject(nemMonster);
+
+        ((Monster)nemMonster).setDamage(30);
+        System.out.println(nemMonster.toString());
+
+        loadObject(nemMonster);
+        System.out.println(nemMonster.toString());
+
+
 
 //        Player player = new Player("Dima",10,15);
 //        System.out.println(player.toString());
