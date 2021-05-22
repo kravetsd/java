@@ -3,6 +3,14 @@ package com.javams;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        Gearbox maclaren = new Gearbox(6);
+        maclaren.operateClutch(true);
+        maclaren.addGear(1,12.3);
+        maclaren.changeGear(1);
+        maclaren.operateClutch(false);
+        System.out.println(maclaren.wheelSpeed(1000));
+//        Gearbox.Gear first = maclaren. new Gear(1,12.3);
+//        System.out.println(first.driveSpeed(1000));
+
     }
 }
