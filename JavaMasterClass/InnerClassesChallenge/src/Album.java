@@ -16,7 +16,7 @@ public class Album {
 
 
     public boolean addSong(Song song){
-        if (findSong(song.getTitle())==null){
+        if (songlist.findSong(song.getTitle())==null){
             this.songlist.addSong(song);
             return true;
         }
@@ -24,13 +24,7 @@ public class Album {
     }
 
     public Song findSong(String title){
-        for (int i=0; i<this.songlist.getSongs().size();i++){
-            Song foundSong = this.songlist.getSongs().get(i);
-            if (foundSong.getTitle().equals(title)){
-                return foundSong;
-            }
-        }
-        return null;
+        return songlist.findSong(title);
     }
 
 
